@@ -12,12 +12,14 @@ import { ValidationService } from './data-driven/validation.service';
 import { JSONService } from './json.service';
 import { JSONPostService } from './json.servicePost';
 import { HttpModule } from '@angular/http';
+import { MypostComponent } from './mypost.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
     DataDrivenComponent,
-    ControlMessagesComponent
+    ControlMessagesComponent,
+    MypostComponent
   ],
   // to use Forms we must have FormsModule OR ReactiveFormsModule Here
   imports: [

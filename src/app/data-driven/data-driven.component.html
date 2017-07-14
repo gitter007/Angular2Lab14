@@ -1,23 +1,15 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label for="username">Name</label><br>
+      <label for="searchTerm">Name</label><br>
       <input type="text"
              class="form-control"
-             id="username"
-             formControlName="username">
-     <control-messages [control]="myForm.controls.username"></control-messages>
+             id="searchTerm"
+             formControlName="searchTerm">
+     <control-messages [control]="myForm.controls.searchTerm"></control-messages>
 
     </div>
-    <div class="form-group">
-      <label for="email">E-Mail</label><br>
-      <input type="text"
-             class="form-control"
-             id="email"
-             formControlName="email">
-     <control-messages [control]="myForm.controls.email"></control-messages>
 
-    </div>
 
 
   <div class="form-group">
@@ -29,8 +21,5 @@
     <control-messages [control]="myForm.controls.postData"></control-messages>
  
   </div>
-
-  <button type="submit" [disabled]="!myForm.valid">Submit</button>
-  <button type="button" class="btn btn-default" (click)="onGetJSON()">Get data</button>
   
 </form>

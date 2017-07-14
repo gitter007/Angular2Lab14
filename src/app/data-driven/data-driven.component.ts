@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ValidationService } from './validation.service';
 import { JSONService } from '../json.service';
 import { JSONPostService } from '../json.servicePost';
@@ -17,16 +17,14 @@ import { Observable } from "rxjs/Rx";
   templateUrl: 'data-driven.component.html',
   providers: [ JSONService ]
 })
-export class DataDrivenComponent {
+export class DataDrivenComponent implements OnInit{
   myForm: FormGroup;
   tempName:any;
   constructor(private formBuilder: FormBuilder, public jsonservice:JSONService, 
   public jsonPostService:JSONPostService) {
 
     this.myForm = formBuilder.group({
-
-      'username': ['', [Validators.required]],
-      'email': ['', [Validators.required, ValidationService.emailValidator]],
+      'searchTerm': ['', []],
       'postData': ['', [Validators.required, Validators.minLength(10)]]
     });
 
@@ -35,6 +33,9 @@ export class DataDrivenComponent {
     );
   }
 
+    ngOnInit() {
+        this.onGetJSON();
+  }
 
   onGetJSON(){
      //console.log(this.myForm);
@@ -48,9 +49,6 @@ export class DataDrivenComponent {
       //many post we're getting body of first json.
       this.myForm.controls['postData'].patchValue(jlist[0]['body']);
     });
-  }
-  onSubmit() {
-    console.log(this.myForm);
   }
 
 
