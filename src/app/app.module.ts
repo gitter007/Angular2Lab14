@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { DataDrivenComponent } from "./data-driven/data-driven.component";
 import { ControlMessagesComponent } from './data-driven/control-messages.component';
 import { ValidationService } from './data-driven/validation.service';
+import { JSONService } from './json.service';
+import { JSONPostService } from './json.servicePost';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,10 @@ import { ValidationService } from './data-driven/validation.service';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [ValidationService],
+  providers: [ValidationService,JSONService,JSONPostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
