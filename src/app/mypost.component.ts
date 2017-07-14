@@ -4,13 +4,13 @@ import { Component, OnInit,Input } from '@angular/core';
   selector: 'mypost',
   template: `
     <p>
-      {{post}}
+      {{data}}
     </p>
   `,
   styles: []
 })
 export class MypostComponent implements OnInit {
-  @Input() private post;
+  @Input() private data;
   constructor() { }
 
   ngOnInit() {

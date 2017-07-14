@@ -10,9 +10,12 @@
 
     </div>
 
+    <mypost  [data] ="posts"></mypost>
 
-
-  <div class="form-group">
+    <ul>
+        <li *ngFor ="let item of posts"> {{item.body}} </li>
+    </ul>
+  <!-- <div class="form-group">
     <label for="postData">Post</label><br>
     <textarea rows="4" cols="50" 
     class="form-control" 
@@ -21,5 +24,5 @@
     <control-messages [control]="myForm.controls.postData"></control-messages>
  
   </div>
-  
+   -->
 </form>
